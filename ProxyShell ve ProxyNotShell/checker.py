@@ -1,7 +1,6 @@
 #python3
 #Originated from : https://github.com/CronUp/Vulnerabilidades/blob/main/proxynotshell_checker.nse
 #Author: Laronax
-
 from tkinter import E
 import requests
 import argparse
@@ -15,7 +14,6 @@ def scanner(host):
     yakalandik=False
     try:
         res=requests.get(host+payload,headers=headers,allow_redirects=False,timeout=10)
-        return(res)
     except requests.exceptions.ReadTimeout as er:
         yakalandik=True
     except requests.exceptions.ConnectionError as er:
@@ -64,6 +62,7 @@ def scanner(host):
                 return("Zafiyet yok!: "+host)
         if yakalandik:
             return("Zafiyet yok veya engelleniyoruz")
+    
     
 
 parse = argparse.ArgumentParser()
