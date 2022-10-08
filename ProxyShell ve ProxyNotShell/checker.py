@@ -69,7 +69,7 @@ parse = argparse.ArgumentParser()
 parse.add_argument('-l', '--listfile', help="Host listesi olarak kullanılır: 'https://subdomain' formatında olmalıdır")
 args=parse.parse_args()
 f_location=args.listfile
-f=open(f)
+f=open(f_location)
 hosts=f.readlines()
 f.close()
 
